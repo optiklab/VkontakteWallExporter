@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{3F2587EA-13BB-452C-911B-72E7BEDEC872}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WallExporter</RootNamespace>
+    <AssemblyName>WallExporter</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Api\APIRequest.cs" />
+    <Compile Include="Api\WallGet.cs" />
+    <Compile Include="Infrastructure\CommonHelper.cs" />
+    <Compile Include="Infrastructure\MD5.cs" />
+    <Compile Include="Infrastructure\MD5Managed.cs" />
+    <Compile Include="Infrastructure\SerializeHelper.cs" />
+    <Compile Include="Infrastructure\VKWebClient.cs" />
+    <Compile Include="Json\APIError.cs" />
+    <Compile Include="Json\ProfileInfo.cs" />
+    <Compile Include="Json\VKAttachment.cs" />
+    <Compile Include="Json\VKAudio.cs" />
+    <Compile Include="Json\VKChat.cs" />
+    <Compile Include="Json\VKComment.cs" />
+    <Compile Include="Json\VKDocument.cs" />
+    <Compile Include="Json\VKGeo.cs" />
+    <Compile Include="Json\VKGroup.cs" />
+    <Compile Include="Json\VKLink.cs" />
+    <Compile Include="Json\VKList.cs" />
+    <Compile Include="Json\VKMessage.cs" />
+    <Compile Include="Json\VKNote.cs" />
+    <Compile Include="Json\VKPage.cs" />
+    <Compile Include="Json\VKPhoto.cs" />
+    <Compile Include="Json\VKPlace.cs" />
+    <Compile Include="Json\VKPoll.cs" />
+    <Compile Include="Json\VKUser.cs" />
+    <Compile Include="Json\VKVideo.cs" />
+    <Compile Include="Json\WallPost.cs" />
+    <Compile Include="Json\WallPostResponse.cs" />
+    <Compile Include="Json\WallResponse.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
